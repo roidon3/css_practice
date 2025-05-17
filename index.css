@@ -1,0 +1,74 @@
+.ddd {
+  color: blueviolet;
+  display: flex;
+  justify-content: center;
+}
+.parent {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 10px;
+  /* margin: 5px; */
+}
+.parent > div {
+  width: 33.3%;
+  min-height: 100px;
+  background-color: blueviolet;
+  font-size: 24px;
+  box-sizing: 1opx;
+  color: white;
+  word-break: break-all;
+  padding-left: 5px;
+  border-radius: 5px;
+  text-align: center;
+  align-content: center;
+}
+
+@media (max-width: 768px) {
+  .parent {
+    flex-direction: column;
+  }
+  .parent > div {
+    width: 100%;
+  }
+}
+
+.p {
+  border: 1px solid red;
+  background-color: pink;
+  height: 200px;
+  width: 200px;
+}
+.c {
+  border: 2px solid blueviolet;
+  background-color: blue;
+  height: 100px;
+  width: 100px;
+  position:relative;
+  top:30%;
+  /* left: 50%; */
+
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+.main {
+  border: 1px solid red;
+  height: 60px;
+  background: linear-gradient(45deg, black, darkblue, skyblue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* adds space inside the container */
+}
+
+.m1 {
+  color: aliceblue;
+}
+
+.s1 {
+  color: antiquewhite;
+  display: flex;
+  gap: 20px; /* space between spans */
+}

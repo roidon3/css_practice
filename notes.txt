@@ -1,0 +1,285 @@
+1. padding-  is the space between the content of an element and its border.
++-----------------------+
+|      Border           |
+|  +-----------------+  |
+|  |   Padding       |  |
+|  |  +-----------+  |  |
+|  |  |  Content  |  |  |
+|  |  +-----------+  |  |
+|  +-----------------+  |
++-----------------------+
+
+
+
+
+
+
+2. margin-is the space outside the element — between the element’s border and surrounding elements.
+
+If padding pushes content inward, margin pushes elements away from each other.
+
+[ MARGIN ]
++-----------------------------+
+| [ BORDER ]
+|  +-----------------------+  |
+|  |      PADDING         |  |
+|  |  +---------------+   |  |
+|  |  |   CONTENT     |   |  |
+|  |  +---------------+   |  |
+|  +-----------------------+  |
++-----------------------------+
+
+
+
+
+
+3.center a div in 2 ways
+    1.using flex-box
+    .parent{
+    border:1px solid red;
+    background-color: pink;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.child{
+    border:2px solid blueviolet;
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+  
+}
+    2.transform translate
+.parent {
+  border: 1px solid red;
+  background-color: pink;
+  height: 200px;
+  width: 200px;
+}
+.child {
+  border: 2px solid blueviolet;
+  background-color: blue;
+  height: 100px;
+  width: 100px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
+4.position in css
+ default -sticky -no left,right,top,bottom
+ if you want to apply top,bottom,right,left you have to use a position
+
+ relative-Positioned relative to its normal position.
+
+ absolute-Positioned relative to the nearest positioned ancestor (not static), or the body if none found.
+  Removes the element from the normal document flow.
+ fixed-Positioned relative to the browser window (viewport).Stays in the same place when scrolling.
+ sticky-Acts like relative until a certain scroll threshold is reached, then behaves like fixed.
+
+
+
+
+
+5.box model-
+Default behavior without box-sizing:
+box-sizing: content-box;(By default, elements use:)
+Total width = width + padding + border
+Total height = height + padding + border
+So if you write:
+div {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+}
+
+ The actual rendered width becomes:
+ 200 (width) + 40 (padding left + right) + 10 (border left + right) = 250px
+
+
+Common practice (and recommended):
+box-sizing: border-box;
+in this mode
+Total width = width (includes padding + border)
+Total height = height (includes padding + border)
+div {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+  box-sizing: border-box;
+}
+
+➡️ The entire box (content + padding + border) stays within 200px total.
+
+
+
+
+
+
+6.What is Margin Collapse?
+Margin collapse happens when the vertical margins of two block-level elements touch — and instead of adding up, 
+the larger margin wins (the smaller one collapses).
+<div class="box1">Box 1</div>
+<div class="box2">Box 2</div>
+.box1 {
+  margin-bottom: 50px;
+  background-color: lightblue;
+}
+
+.box2 {
+  margin-top: 30px;
+  background-color: lightgreen;
+}
+You might expect:
+50px + 30px = 80px space between the boxes
+But NOPE! 🙃
+
+➡️ The result will be:
+Max(50px, 30px) = 50px space between the boxes
+
+
+
+7.z-index — it controls which element appears on top when elements overlap.
+z-index is a CSS property that sets the stacking order of elements along the z-axis
+ (imagine it as "depth" — into or out of the screen).
+ Higher z-index = Comes on top
+ <div class="box1">Box 1</div>
+<div class="box2">Box 2</div>
+
+.box1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  z-index: 1;
+}
+
+.box2 {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 150px;
+  height: 150px;
+  background-color: blue;
+  z-index: 2;
+}
+
+ Important:
+z-index only works on elements that have a position set:
+position: relative
+position: absolute
+position: fixed
+position: sticky
+If you don’t set position, z-index won’t do anything.
+
+
+
+word-break-break all -it breaks sentence also
+word-break - break-word - breaks the word
+
+
+
+display-
+Block - Makes the element a block-level element. Starts on a new line and takes up full width. (<div>, <p>, etc.)
+inline -Makes the element an inline element. Doesn’t start on a new line and only takes as much width as needed. (<span>, <a>, etc.)
+cant apply height ,width,margin and padding top
+inline-block - Like inline, but allows you to set width and height.
+disply -none
+visibility-hidden
+flex and grid
+
+
+
+flex box- 
+all these properties given to parent-
+by default the direction is column
+we can make display flex so that the entire element will come in row 
+to center a div we'll give justify content and align items center
+here main axis is row so the justify content will apply for row brings in center
+here the cross axis is column so align items will bring it to center
+
+if we do flex direction as column both the axis will swap main axis(column) and cross axis is (row)
+
+flex-wrap -prevents the overflow wraps the content ,if content is more takes new line instead of single line
+if only 1 line use align-items
+if muliple line use align-content (when we use wrap and it'll come to new line that time we use )
+there is nothing called justify-items
+
+gap - to give gap between the elements(expictilty row and column gap property exists)
+
+these properties for child-
+order- in which order u want to show the elements default is o,if order is less it'll show first
+flex grow -till how much the item can grow default is 0
+flex-shrink
+align self- to align individual element
+
+
+
+overfolow hidden,auto
+
+Colors: hex, rgb, rgba, hsl
+wrap
+
+float
+float: left | right;
+clear: both;
+inline block elements
+
+Typography: font-family, font-size, font-weight, line-height, letter-spacing
+border: 1px solid #ccc;
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+
+Backgrounds: background-color, background-image, background-size, background-position
+transofrm translate property
+css selectors - and priority
+specicivity in css
+
+
+Media Queries
+
+Mobile-first approach
+
+Breakpoints
+
+Relative units (em, rem, %)
+
+CSS Container Queries (new & powerful)
+
+Pseudo-classes (:hover, :focus, :nth-child(), :not())
+
+Pseudo-elements (::before, ::after)
+
+Custom Properties (CSS Variables): --main-color
+
+CSS Specificity & Inheritance
+
+Calc Function: width: calc(100% - 40px)
+
+Layering with z-index and stacking context
+
+Clipping and Masking: clip-path, mask
+
+Filter Effects: blur(), brightness(), grayscale()
+
+
+⚡ Performance & Maintenance
+BEM (Block Element Modifier) naming convention
+
+DRY CSS & utility-first frameworks (like Tailwind)
+
+Scoped styles (in frameworks like React, Vue, etc.)
+
+Preprocessors (like SCSS/SASS)
