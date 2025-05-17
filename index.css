@@ -8,7 +8,6 @@
   flex-direction: row;
   width: 100%;
   gap: 10px;
-  /* margin: 5px; */
 }
 .parent > div {
   width: 33.3%;
